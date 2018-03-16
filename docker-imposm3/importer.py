@@ -350,6 +350,9 @@ class Importer(object):
 
 
 if __name__ == '__main__':
+    while not exists('/home/settings/osm.pbf'):
+        print 'Waiting for osm.pbf'
+        sleep(30)
     importer = Importer()
     importer.overwrite_environment()
     importer.check_settings()

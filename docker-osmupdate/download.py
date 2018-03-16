@@ -25,6 +25,8 @@ from sys import exit, stderr
 from subprocess import call, Popen, PIPE
 from datetime import datetime
 from time import sleep
+import urllib
+import shutil
 
 
 class Downloader(object):
@@ -160,6 +162,10 @@ class Downloader(object):
 
 
 if __name__ == '__main__':
+    print 'Download osm.pbf'
+    urllib.urlretrieve('http://download.geofabrik.de/africa/madagascar-latest.osm.pbf', '/home/settings/osmdownload.pbf')
+    print 'Download done'
+    shutil.copy('/home/settings/osmdownload.pbf', '/home/settings/osm.pbf')
     downloader = Downloader()
     downloader.overwrite_environment()
     downloader.check_settings()
