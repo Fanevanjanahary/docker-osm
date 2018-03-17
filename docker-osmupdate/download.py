@@ -166,6 +166,7 @@ if __name__ == '__main__':
     urllib.urlretrieve('http://download.geofabrik.de/africa/madagascar-latest.osm.pbf', '/home/settings/osmdownload.pbf')
     print 'Download done'
     shutil.copy('/home/settings/osmdownload.pbf', '/home/settings/osm.pbf')
+    print 'Copy done'
     downloader = Downloader()
     downloader.overwrite_environment()
     downloader.check_settings()
